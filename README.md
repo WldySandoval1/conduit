@@ -27,3 +27,5 @@ pnpm approve-builds
 pnpm dlx @nestjs/cli g module articles
 
 pnpm mikro-orm migration:create -- --initial
+
+h
