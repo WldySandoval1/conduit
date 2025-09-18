@@ -28,4 +28,12 @@ pnpm dlx @nestjs/cli g module articles
 
 pnpm mikro-orm migration:create -- --initial
 
+pnpm install slug
+
+pnpm install -D @types/slug
+
 pnpm start:dev
+
+# Instalara todas las dependencias con
+
+pnpm i
