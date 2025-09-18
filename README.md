@@ -37,3 +37,8 @@ pnpm start:dev
 # Instalara todas las dependencias con
 
 pnpm i
+
+# Reconstruir
+
+npx mikro-orm migration:create
+npx mikro-orm migration:up
