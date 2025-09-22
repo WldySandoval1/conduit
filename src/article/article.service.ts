@@ -17,17 +17,19 @@ import {
 } from './article.interface';
 import { Comment } from './comment.entity';
 import { CreateArticleDto, CreateCommentDto } from './dto';
+import { ArticleRepository } from './aticle.repository';
+import { UserRepository } from 'src/user/user.repository';
 
 @Injectable()
 export class ArticleService {
   constructor(
     private readonly em: EntityManager,
     @InjectRepository(Article)
-    private readonly articleRepository: EntityRepository<Article>,
+    private readonly articleRepository: ArticleRepository,
     @InjectRepository(Comment)
     private readonly commentRepository: EntityRepository<Comment>,
     @InjectRepository(User)
-    private readonly userRepository: EntityRepository<User>,
+    private readonly userRepository: UserRepository,
   ) {}
 
   async findAll(userId: number, query: any): Promise<ArticlesResponse> {
@@ -233,6 +235,6 @@ export class ArticleService {
   }
 
   async delete(slug: string) {
-    return this.articleRepository.nativeDelete({ slug });
+    this.articleRepository.nativeDelete({ slug });
   }
 }

@@ -10,7 +10,7 @@ export class CreateArticleDto {
   @IsNotEmpty()
   readonly description!: string;
 
-  @ApiProperty({ example: 'body' })
+  @ApiProperty({ example: 'Cuerpo del articulo' })
   @IsNotEmpty()
   readonly body!: string;
 
